@@ -18,6 +18,12 @@
 		52CF7C4529DE843900A732E0 /* WishlistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CF7C4329DE843900A732E0 /* WishlistViewController.xib */; };
 		52CF7C4929DE845000A732E0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF7C4729DE845000A732E0 /* ProfileViewController.swift */; };
 		52CF7C4A29DE845000A732E0 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CF7C4829DE845000A732E0 /* ProfileViewController.xib */; };
+		52CF7C4D29DE853D00A732E0 /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF7C4B29DE853D00A732E0 /* SearchBarCell.swift */; };
+		52CF7C4E29DE853D00A732E0 /* SearchBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CF7C4C29DE853D00A732E0 /* SearchBarCell.xib */; };
+		52CF7C5629DE8B8400A732E0 /* PromoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF7C5429DE8B8400A732E0 /* PromoTableCell.swift */; };
+		52CF7C5729DE8B8400A732E0 /* PromoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CF7C5529DE8B8400A732E0 /* PromoTableCell.xib */; };
+		52CF7C5A29DE8C0A00A732E0 /* PromoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF7C5829DE8C0A00A732E0 /* PromoCollectionCell.swift */; };
+		52CF7C5B29DE8C0A00A732E0 /* PromoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52CF7C5929DE8C0A00A732E0 /* PromoCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		52CF7C4329DE843900A732E0 /* WishlistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistViewController.xib; sourceTree = "<group>"; };
 		52CF7C4729DE845000A732E0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52CF7C4829DE845000A732E0 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		52CF7C4B29DE853D00A732E0 /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
+		52CF7C4C29DE853D00A732E0 /* SearchBarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchBarCell.xib; sourceTree = "<group>"; };
+		52CF7C5429DE8B8400A732E0 /* PromoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoTableCell.swift; sourceTree = "<group>"; };
+		52CF7C5529DE8B8400A732E0 /* PromoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoTableCell.xib; sourceTree = "<group>"; };
+		52CF7C5829DE8C0A00A732E0 /* PromoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCollectionCell.swift; sourceTree = "<group>"; };
+		52CF7C5929DE8C0A00A732E0 /* PromoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoCollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +129,12 @@
 			children = (
 				52CF7C3D29DE842700A732E0 /* HomeViewController.swift */,
 				52CF7C3E29DE842700A732E0 /* HomeViewController.xib */,
+				52CF7C4B29DE853D00A732E0 /* SearchBarCell.swift */,
+				52CF7C4C29DE853D00A732E0 /* SearchBarCell.xib */,
+				52CF7C5429DE8B8400A732E0 /* PromoTableCell.swift */,
+				52CF7C5529DE8B8400A732E0 /* PromoTableCell.xib */,
+				52CF7C5829DE8C0A00A732E0 /* PromoCollectionCell.swift */,
+				52CF7C5929DE8C0A00A732E0 /* PromoCollectionCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -189,10 +207,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				52CF7C2829DE810800A732E0 /* LaunchScreen.storyboard in Resources */,
+				52CF7C5B29DE8C0A00A732E0 /* PromoCollectionCell.xib in Resources */,
 				52CF7C4529DE843900A732E0 /* WishlistViewController.xib in Resources */,
 				52CF7C2529DE810800A732E0 /* Assets.xcassets in Resources */,
 				52CF7C4A29DE845000A732E0 /* ProfileViewController.xib in Resources */,
 				52CF7C4029DE842700A732E0 /* HomeViewController.xib in Resources */,
+				52CF7C5729DE8B8400A732E0 /* PromoTableCell.xib in Resources */,
+				52CF7C4E29DE853D00A732E0 /* SearchBarCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,12 +224,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CF7C4D29DE853D00A732E0 /* SearchBarCell.swift in Sources */,
 				52CF7C3F29DE842700A732E0 /* HomeViewController.swift in Sources */,
 				52CF7C4429DE843900A732E0 /* WishlistViewController.swift in Sources */,
 				52CF7C1C29DE810700A732E0 /* AppDelegate.swift in Sources */,
 				52CF7C4929DE845000A732E0 /* ProfileViewController.swift in Sources */,
 				52CF7C1E29DE810700A732E0 /* SceneDelegate.swift in Sources */,
+				52CF7C5A29DE8C0A00A732E0 /* PromoCollectionCell.swift in Sources */,
 				52CF7C3C29DE82F800A732E0 /* TabBar.swift in Sources */,
+				52CF7C5629DE8B8400A732E0 /* PromoTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
