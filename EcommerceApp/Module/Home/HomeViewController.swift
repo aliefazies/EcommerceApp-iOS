@@ -8,27 +8,47 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var homeTableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-//        view.backgroundColor = .systemRed
-        homeTableView.register(UINib(nibName: "SearchBarCell", bundle: nil), forCellReuseIdentifier: SearchBarCell.identifier)
-        homeTableView.register(UINib(nibName: "PromoTableCell", bundle: nil), forCellReuseIdentifier: PromoTableCell.identifier)
+    fileprivate func setupHomeTableView() {
         homeTableView.delegate = self
         homeTableView.dataSource = self
         homeTableView.separatorStyle = .none
+        
+        homeTableView.register(UINib(nibName: "SearchBarCell", bundle: nil), forCellReuseIdentifier: SearchBarCell.identifier)
+        homeTableView.register(UINib(nibName: "PromoTableCell", bundle: nil), forCellReuseIdentifier: PromoTableCell.identifier)
+        homeTableView.register(UINib(nibName: "CategoryTableCell", bundle: nil), forCellReuseIdentifier: CategoryTableCell.identifier)
+        homeTableView.register(UINib(nibName: "FeaturedProductTableCell", bundle: nil), forCellReuseIdentifier: FeaturedProductTableCell.identifier)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
+        setupHomeTableView()
     }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.section {
+        case 0:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PromoTableCell.identifier, for: indexPath) as? PromoTableCell else { return UITableViewCell()}
-        cell.setupUI()
+            cell.setupPromoTableCellUI()
             return cell
+        case 1:
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: CategoryTableCell.identifier, for: indexPath) as? CategoryTableCell else { return UITableViewCell() }
+            cell.setupCategoryTableCellUI()
+            return cell
+        case 2:
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: FeaturedProductTableCell.identifier, for: indexPath) as? FeaturedProductTableCell else { return UITableViewCell() }
+            cell.setupFeaturedProductTableCellUI()
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,10 +56,27 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        switch indexPath.section {
+        case 0:
+//            return 180
+//            return self.homeTableView.frame.size.height / 3.6
+            return UITableView.automaticDimension
+        case 2:
+//            return 550
+//            let height = self.homeTableView.frame.size.height / 4
+//            return height
+            return UITableView.automaticDimension
+            
+        default:
+            return 100
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layoutIfNeeded()
     }
 }
