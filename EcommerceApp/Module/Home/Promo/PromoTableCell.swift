@@ -16,7 +16,7 @@ class PromoTableCell: UITableViewCell {
     
     static let identifier = "promoTableCell"
 
-    @IBOutlet weak var promoCollectionView: UICollectionView!
+    @IBOutlet weak var promoCollectionView: DynamicHeightCollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

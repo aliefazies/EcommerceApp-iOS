@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0168D92C29E3962000BDB81D /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168D92B29E3962000BDB81D /* DynamicHeightCollectionView.swift */; };
+		0168D93229E3A29A00BDB81D /* UserProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168D93029E3A29A00BDB81D /* UserProfileTableCell.swift */; };
+		0168D93329E3A29A00BDB81D /* UserProfileTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0168D93129E3A29A00BDB81D /* UserProfileTableCell.xib */; };
+		0168D93529E3A60C00BDB81D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168D93429E3A60C00BDB81D /* UIColorExtension.swift */; };
+		0168D94029E3BFD500BDB81D /* MenuButtonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168D93E29E3BFD500BDB81D /* MenuButtonTableCell.swift */; };
+		0168D94129E3BFD500BDB81D /* MenuButtonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0168D93F29E3BFD500BDB81D /* MenuButtonTableCell.xib */; };
+		0168D94729E3C48D00BDB81D /* LogoutButtonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168D94529E3C48D00BDB81D /* LogoutButtonTableCell.swift */; };
+		0168D94829E3C48D00BDB81D /* LogoutButtonTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0168D94629E3C48D00BDB81D /* LogoutButtonTableCell.xib */; };
 		520FAD6629DEAA15004021F9 /* FeaturedProductTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520FAD6429DEAA15004021F9 /* FeaturedProductTableCell.swift */; };
 		520FAD6729DEAA15004021F9 /* FeaturedProductTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520FAD6529DEAA15004021F9 /* FeaturedProductTableCell.xib */; };
 		520FAD6A29DEAA46004021F9 /* ProductCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520FAD6829DEAA46004021F9 /* ProductCollectionCell.swift */; };
@@ -37,6 +44,13 @@
 
 /* Begin PBXFileReference section */
 		0168D92B29E3962000BDB81D /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
+		0168D93029E3A29A00BDB81D /* UserProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableCell.swift; sourceTree = "<group>"; };
+		0168D93129E3A29A00BDB81D /* UserProfileTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileTableCell.xib; sourceTree = "<group>"; };
+		0168D93429E3A60C00BDB81D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		0168D93E29E3BFD500BDB81D /* MenuButtonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonTableCell.swift; sourceTree = "<group>"; };
+		0168D93F29E3BFD500BDB81D /* MenuButtonTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuButtonTableCell.xib; sourceTree = "<group>"; };
+		0168D94529E3C48D00BDB81D /* LogoutButtonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButtonTableCell.swift; sourceTree = "<group>"; };
+		0168D94629E3C48D00BDB81D /* LogoutButtonTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoutButtonTableCell.xib; sourceTree = "<group>"; };
 		520FAD6429DEAA15004021F9 /* FeaturedProductTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedProductTableCell.swift; sourceTree = "<group>"; };
 		520FAD6529DEAA15004021F9 /* FeaturedProductTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedProductTableCell.xib; sourceTree = "<group>"; };
 		520FAD6829DEAA46004021F9 /* ProductCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionCell.swift; sourceTree = "<group>"; };
@@ -80,7 +94,9 @@
 		0168D92929E395CF00BDB81D /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				0168D93629E3B31800BDB81D /* ProfileButton */,
 				0168D92B29E3962000BDB81D /* DynamicHeightCollectionView.swift */,
+				0168D93429E3A60C00BDB81D /* UIColorExtension.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -94,6 +110,40 @@
 				520FAD6929DEAA46004021F9 /* ProductCollectionCell.xib */,
 			);
 			path = FeaturedProduct;
+			sourceTree = "<group>";
+		};
+		0168D93629E3B31800BDB81D /* ProfileButton */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfileButton;
+			sourceTree = "<group>";
+		};
+		0168D93929E3B7ED00BDB81D /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				0168D93029E3A29A00BDB81D /* UserProfileTableCell.swift */,
+				0168D93129E3A29A00BDB81D /* UserProfileTableCell.xib */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		0168D94329E3C44800BDB81D /* MenuButton */ = {
+			isa = PBXGroup;
+			children = (
+				0168D93E29E3BFD500BDB81D /* MenuButtonTableCell.swift */,
+				0168D93F29E3BFD500BDB81D /* MenuButtonTableCell.xib */,
+			);
+			path = MenuButton;
+			sourceTree = "<group>";
+		};
+		0168D94429E3C45900BDB81D /* LogoutButton */ = {
+			isa = PBXGroup;
+			children = (
+				0168D94529E3C48D00BDB81D /* LogoutButtonTableCell.swift */,
+				0168D94629E3C48D00BDB81D /* LogoutButtonTableCell.xib */,
+			);
+			path = LogoutButton;
 			sourceTree = "<group>";
 		};
 		52CF7C0F29DE810700A732E0 = {
@@ -156,8 +206,11 @@
 		52CF7C3829DE82CC00A732E0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				0168D94429E3C45900BDB81D /* LogoutButton */,
 				52CF7C4729DE845000A732E0 /* ProfileViewController.swift */,
 				52CF7C4829DE845000A732E0 /* ProfileViewController.xib */,
+				0168D93929E3B7ED00BDB81D /* UserProfile */,
+				0168D94329E3C44800BDB81D /* MenuButton */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -280,11 +333,14 @@
 				52D10B9329DEA0B7002426F9 /* CategoryCollectionCell.xib in Resources */,
 				52CF7C2529DE810800A732E0 /* Assets.xcassets in Resources */,
 				52CF7C4A29DE845000A732E0 /* ProfileViewController.xib in Resources */,
+				0168D93329E3A29A00BDB81D /* UserProfileTableCell.xib in Resources */,
 				52CF7C4029DE842700A732E0 /* HomeViewController.xib in Resources */,
 				52CF7C5729DE8B8400A732E0 /* PromoTableCell.xib in Resources */,
 				52D10B8F29DEA078002426F9 /* CategoryTableCell.xib in Resources */,
 				520FAD6729DEAA15004021F9 /* FeaturedProductTableCell.xib in Resources */,
 				52CF7C4E29DE853D00A732E0 /* SearchBarCell.xib in Resources */,
+				0168D94129E3BFD500BDB81D /* MenuButtonTableCell.xib in Resources */,
+				0168D94829E3C48D00BDB81D /* LogoutButtonTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,9 +351,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0168D93229E3A29A00BDB81D /* UserProfileTableCell.swift in Sources */,
 				52CF7C4D29DE853D00A732E0 /* SearchBarCell.swift in Sources */,
 				52CF7C3F29DE842700A732E0 /* HomeViewController.swift in Sources */,
 				52CF7C4429DE843900A732E0 /* WishlistViewController.swift in Sources */,
+				0168D94029E3BFD500BDB81D /* MenuButtonTableCell.swift in Sources */,
 				0168D92C29E3962000BDB81D /* DynamicHeightCollectionView.swift in Sources */,
 				52CF7C1C29DE810700A732E0 /* AppDelegate.swift in Sources */,
 				52D10B8E29DEA078002426F9 /* CategoryTableCell.swift in Sources */,
@@ -305,6 +363,8 @@
 				52CF7C1E29DE810700A732E0 /* SceneDelegate.swift in Sources */,
 				52CF7C5A29DE8C0A00A732E0 /* PromoCollectionCell.swift in Sources */,
 				52CF7C3C29DE82F800A732E0 /* TabBar.swift in Sources */,
+				0168D94729E3C48D00BDB81D /* LogoutButtonTableCell.swift in Sources */,
+				0168D93529E3A60C00BDB81D /* UIColorExtension.swift in Sources */,
 				52D10B9229DEA0B7002426F9 /* CategoryCollectionCell.swift in Sources */,
 				520FAD6629DEAA15004021F9 /* FeaturedProductTableCell.swift in Sources */,
 				52CF7C5629DE8B8400A732E0 /* PromoTableCell.swift in Sources */,
