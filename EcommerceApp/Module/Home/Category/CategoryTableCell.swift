@@ -9,19 +9,13 @@ import UIKit
 
 class CategoryTableCell: UITableViewCell {
     
-    @IBOutlet weak var categoryCollectionView: UICollectionView!
-    
     static let identifier = "categoryTableCell"
+    
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     func setupCategoryTableCellUI() {

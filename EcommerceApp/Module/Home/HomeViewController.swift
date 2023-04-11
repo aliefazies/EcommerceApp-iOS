@@ -30,9 +30,9 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         switch indexPath.section {
         case 0:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PromoTableCell.identifier, for: indexPath) as? PromoTableCell else { return UITableViewCell()}
@@ -50,33 +50,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-//            return 180
-//            return self.homeTableView.frame.size.height / 3.6
             return UITableView.automaticDimension
-        case 2:
-//            return 550
-//            let height = self.homeTableView.frame.size.height / 4
-//            return height
-            return UITableView.automaticDimension
-            
-        default:
-            return 100
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.layoutIfNeeded()
     }
 }
