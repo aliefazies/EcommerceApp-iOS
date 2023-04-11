@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="213" id="KGk-i7-Jjw" customClass="ProductReviewTableCell" customModule="EcommerceApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVt-fj-VNB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9G-ez-ymS">
+                                <rect key="frame" x="16" y="16" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZI-BW-6li">
+                                <rect key="frame" x="262" y="16" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mfk-go-AEn" customClass="DynamicHeightTableView" customModule="EcommerceApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="53" width="288" height="144"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mfk-go-AEn" firstAttribute="top" secondItem="P9G-ez-ymS" secondAttribute="bottom" constant="16" id="0FR-dj-xyF"/>
+                            <constraint firstItem="mfk-go-AEn" firstAttribute="leading" secondItem="TVt-fj-VNB" secondAttribute="leading" constant="16" id="AlG-fA-j1G"/>
+                            <constraint firstAttribute="trailing" secondItem="mfk-go-AEn" secondAttribute="trailing" constant="16" id="BoZ-bI-wPM"/>
+                            <constraint firstItem="bZI-BW-6li" firstAttribute="top" secondItem="TVt-fj-VNB" secondAttribute="top" constant="16" id="Hhy-c4-xX5"/>
+                            <constraint firstAttribute="trailing" secondItem="bZI-BW-6li" secondAttribute="trailing" constant="16" id="KY2-sT-G9i"/>
+                            <constraint firstItem="P9G-ez-ymS" firstAttribute="leading" secondItem="TVt-fj-VNB" secondAttribute="leading" constant="16" id="PZ0-S1-eFC"/>
+                            <constraint firstAttribute="bottom" secondItem="mfk-go-AEn" secondAttribute="bottom" constant="16" id="Wid-bZ-7fw"/>
+                            <constraint firstItem="P9G-ez-ymS" firstAttribute="top" secondItem="TVt-fj-VNB" secondAttribute="top" constant="16" id="gLx-Vq-Wum"/>
+                            <constraint firstItem="bZI-BW-6li" firstAttribute="leading" secondItem="P9G-ez-ymS" secondAttribute="trailing" priority="1" constant="16" id="u9p-rA-QLU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="TVt-fj-VNB" secondAttribute="trailing" id="HtQ-cw-qla"/>
+                    <constraint firstItem="TVt-fj-VNB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fhz-hs-snf"/>
+                    <constraint firstAttribute="bottom" secondItem="TVt-fj-VNB" secondAttribute="bottom" id="nOo-2H-REp"/>
+                    <constraint firstItem="TVt-fj-VNB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zrh-2e-hvN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="productReviewBgView" destination="TVt-fj-VNB" id="e7y-pI-F4h"/>
+                <outlet property="productReviewCountLabel" destination="bZI-BW-6li" id="OIw-za-P6q"/>
+                <outlet property="productReviewTableView" destination="mfk-go-AEn" id="G37-YM-1dj"/>
+                <outlet property="productReviewTitleLabel" destination="P9G-ez-ymS" id="C57-lP-bZn"/>
+            </connections>
+            <point key="canvasLocation" x="13.740458015267174" y="79.225352112676063"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
