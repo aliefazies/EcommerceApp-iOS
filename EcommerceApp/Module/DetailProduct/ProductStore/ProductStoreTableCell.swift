@@ -22,17 +22,10 @@ class ProductStoreTableCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func setupProductStoreTableCellUI() {
         productStoreImage.image = UIImage(named: "product2")
         productStoreNameLabel.text = "Azies Store"
         productStoreTypeLabel.text = "Official Store"
     }
-    
 }

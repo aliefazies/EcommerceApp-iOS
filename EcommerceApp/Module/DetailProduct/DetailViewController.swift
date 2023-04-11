@@ -11,16 +11,18 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailTableView: DynamicHeightTableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
+    fileprivate func setupDetailTableView() {
         detailTableView.delegate = self
         detailTableView.dataSource = self
         detailTableView.register(UINib(nibName: "ProductImageTableCell", bundle: nil), forCellReuseIdentifier: ProductImageTableCell.identifier)
         detailTableView.register(UINib(nibName: "ProductStoreTableCell", bundle: nil), forCellReuseIdentifier: ProductStoreTableCell.identifier)
         detailTableView.register(UINib(nibName: "ProductDescriptionTableCell", bundle: nil), forCellReuseIdentifier: ProductDescriptionTableCell.identifier)
         detailTableView.register(UINib(nibName: "ProductReviewTableCell", bundle: nil), forCellReuseIdentifier: ProductReviewTableCell.identifier)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupDetailTableView()
     }
 }
 
@@ -48,7 +50,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         default:
             return UITableViewCell()
-            
         }
     }
     
@@ -58,15 +59,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch indexPath.section {
-//        case 3:
-//            return 1200
-//        default:
-        return UITableView.automaticDimension
-//        }
     }
 }
 

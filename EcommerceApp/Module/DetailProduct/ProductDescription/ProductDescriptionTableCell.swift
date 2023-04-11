@@ -17,18 +17,10 @@ class ProductDescriptionTableCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func setupProductDescriptionTableCellUI() {
         productDescriptionTitleLabel.text = "Description Product"
         productDescriptionLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus lorem sollicitudin mattis suscipit. Nulla lobortis magna massa, sit amet facilisis turpis sodales quis. Pellentesque auctor ac diam sit amet commodo. Nulla facilisi. Integer in augue ex. Maecenas sodales sollicitudin turpis volutpat imperdiet. Proin ultricies aliquet neque quis elementum. Cras."
     }
-    
 }

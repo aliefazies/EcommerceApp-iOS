@@ -22,11 +22,6 @@ class ProductImageTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
     
     func setupProductImageTableCellUI() {
         productImage.image = UIImage(named: "product1")
@@ -36,5 +31,4 @@ class ProductImageTableCell: UITableViewCell {
         productReviewLabel.text = "85 reviews"
         productAvailableLabel.text = "Available: 20"
     }
-    
 }
