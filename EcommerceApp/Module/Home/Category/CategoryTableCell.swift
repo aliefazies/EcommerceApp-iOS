@@ -11,6 +11,8 @@ class CategoryTableCell: UITableViewCell {
     
     static let identifier = "categoryTableCell"
     
+    var dataCategoryDummy = CategoryProvider.all()
+    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -29,14 +31,18 @@ extension CategoryTableCell: UICollectionViewDelegateFlowLayout, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionCell.identifier, for: indexPath) as? CategoryCollectionCell else { return UICollectionViewCell() }
         
+        cell.categoryImage.image = UIImage(named: dataCategoryDummy[indexPath.row].icon)
+        cell.categoryLabel.text = dataCategoryDummy[indexPath.row].name
+        cell.categoryLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
+        cell.categoryLabel.numberOfLines = 0
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return dataCategoryDummy.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: 76)
+        return CGSize(width: 100, height: 60)
     }
 }
