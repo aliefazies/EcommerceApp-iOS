@@ -15,6 +15,8 @@ enum cellSize: CGFloat {
 class PromoTableCell: UITableViewCell {
     
     static let identifier = "promoTableCell"
+    
+    var dataPromoDummy = PromoProvider.all()
 
     @IBOutlet weak var promoCollectionView: DynamicHeightCollectionView!
     
@@ -42,14 +44,17 @@ extension PromoTableCell: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = promoCollectionView.dequeueReusableCell(withReuseIdentifier: PromoCollectionCell.identifier, for: indexPath) as? PromoCollectionCell else { return UICollectionViewCell()}
         
-        cell.promoImage.image = UIImage(named: "banner\(indexPath.row + 1)")
+//        cell.promoImage.image = UIImage(named: "banner\(indexPath.row + 1)")
+        cell.promoImage.image = UIImage(named: dataPromoDummy[indexPath.row].fileURL)
+        print(dataPromoDummy[indexPath.row].idPromo)
         cell.layer.cornerRadius = 6
         cell.layer.masksToBounds = true
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+//        return 6
+        return dataPromoDummy.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
