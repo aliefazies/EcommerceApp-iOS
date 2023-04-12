@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 class WishlistViewController: UIViewController {
+    
+    var dataProductDummy = productProvider.all()
     
     @IBOutlet weak var wishlistCollectionView: UICollectionView!
     
@@ -29,11 +32,12 @@ extension WishlistViewController: UICollectionViewDelegateFlowLayout, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = wishlistCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionCell.identifier, for: indexPath) as? ProductCollectionCell else { return UICollectionViewCell() }
         cell.setupProductCollectionCellUI()
+        cell.productImage.sd_setImage(with: URL(string: dataProductDummy[indexPath.item].imageURL ?? ""))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return dataProductDummy.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
