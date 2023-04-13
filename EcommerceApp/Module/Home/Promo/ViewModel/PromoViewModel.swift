@@ -19,10 +19,10 @@ class PromoViewModel: PromoViewModelProtocol {
     
     init(apiServiceProtocol: ApiServiceProtocol) {
         self.apiServiceProtocol = apiServiceProtocol
-        fetchData()
+        fetchDataPromo()
     }
     
-    func fetchData() {
+    func fetchDataPromo() {
         self.apiServiceProtocol?.callApi(with: self.url, model: Promos.self, completion: { response in
             switch response {
             case .success(let promo):
