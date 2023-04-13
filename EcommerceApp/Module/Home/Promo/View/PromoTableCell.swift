@@ -16,7 +16,8 @@ class PromoTableCell: UITableViewCell {
     
     static let identifier = "promoTableCell"
     
-    var dataPromoDummy = PromoProvider.all()
+    var promosData: Promos?
+    var promoViewModel: PromoViewModelProtocol?
 
     @IBOutlet weak var promoCollectionView: DynamicHeightCollectionView!
     
@@ -24,11 +25,15 @@ class PromoTableCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    fileprivate func callAPI() {
+        promoViewModel?.promoDataBinding = { promos in
+                self.promosData = promos
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [weak self] in
+            self?.promoCollectionView.reloadData()
+        }
     }
     
     func setupPromoTableCellUI() {
@@ -37,24 +42,26 @@ class PromoTableCell: UITableViewCell {
         promoCollectionView.showsHorizontalScrollIndicator = false
         promoCollectionView.delegate = self
         promoCollectionView.dataSource = self
+        
+        promoViewModel = PromoViewModel(apiServiceProtocol: APIService())
+        callAPI()
+        DispatchQueue.main.async { [weak self] in
+            self?.promoCollectionView.reloadData()
+        }
     }
 }
 
 extension PromoTableCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = promoCollectionView.dequeueReusableCell(withReuseIdentifier: PromoCollectionCell.identifier, for: indexPath) as? PromoCollectionCell else { return UICollectionViewCell()}
-        
-//        cell.promoImage.image = UIImage(named: "banner\(indexPath.row + 1)")
-        cell.promoImage.image = UIImage(named: dataPromoDummy[indexPath.row].fileURL)
-        print(dataPromoDummy[indexPath.row].idPromo)
+        cell.configurePromoImage(promoData: promosData?[indexPath.row] ?? Promo(idPromo: 0, fileName: "", fileURL: ""))
         cell.layer.cornerRadius = 6
         cell.layer.masksToBounds = true
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 6
-        return dataPromoDummy.count
+        return promosData?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
