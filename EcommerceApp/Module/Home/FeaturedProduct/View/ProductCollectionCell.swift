@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProductCollectionCell: UICollectionViewCell {
     
@@ -25,12 +26,13 @@ class ProductCollectionCell: UICollectionViewCell {
     func setupProductCollectionCellUI() {
         productNameLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         productNameLabel.textColor = UIColor(hex: "#0C1A30FF")
-        productNameLabel.text = "TMA-2 HD Wireless"
         productNameLabel.numberOfLines = 2
-//        productCollectionCellBgView.backgroundColor = .systemPink
-        
-        
-        
+    }
+    
+    func setupProductCollectionCellData(product: Product) {
+        let transformer = SDImageResizingTransformer(size: CGSize(width: 156, height: 260), scaleMode: .aspectFit)
+        productNameLabel.text = product.title
+        productImage.sd_setImage(with: URL(string: product.imageURL ?? ""), placeholderImage: nil, context: [.imageTransformer : transformer])
     }
 
 }

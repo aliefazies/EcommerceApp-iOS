@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="deu-KW-Uoe" customClass="DynamicHeightCollectionView" customModule="EcommerceApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="144"/>
+                        <rect key="frame" x="0.0" y="40" width="360" height="104"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lhz-g7-c57">
                             <size key="itemSize" width="128" height="128"/>
@@ -28,12 +28,32 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Goc-Tz-zkJ">
+                        <rect key="frame" x="16" y="8" width="328" height="24"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icv-Kx-5Nj">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqk-YB-GKP">
+                                <rect key="frame" x="262.66666666666669" y="0.0" width="65.333333333333314" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="deu-KW-Uoe" secondAttribute="trailing" id="15n-Ys-UfU"/>
+                    <constraint firstAttribute="trailing" secondItem="Goc-Tz-zkJ" secondAttribute="trailing" constant="16" id="6yf-tj-oNi"/>
                     <constraint firstAttribute="bottom" secondItem="deu-KW-Uoe" secondAttribute="bottom" id="7CR-gX-Opr"/>
                     <constraint firstItem="deu-KW-Uoe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Tag-zN-5KO"/>
-                    <constraint firstItem="deu-KW-Uoe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XAM-fU-VJW"/>
+                    <constraint firstItem="Goc-Tz-zkJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="fa0-PQ-dA0"/>
+                    <constraint firstItem="deu-KW-Uoe" firstAttribute="top" secondItem="Goc-Tz-zkJ" secondAttribute="bottom" constant="8" id="jed-FF-xOz"/>
+                    <constraint firstItem="Goc-Tz-zkJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="yXt-Cs-RcT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
