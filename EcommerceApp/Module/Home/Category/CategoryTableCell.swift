@@ -35,6 +35,7 @@ extension CategoryTableCell: UICollectionViewDelegateFlowLayout, UICollectionVie
         cell.categoryLabel.text = dataCategoryDummy[indexPath.row].name
         cell.categoryLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
         cell.categoryLabel.numberOfLines = 0
+        cell.categoryLabel.textAlignment = .center
         return cell
     }
     
@@ -43,7 +44,7 @@ extension CategoryTableCell: UICollectionViewDelegateFlowLayout, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: 60)
+        return CGSize(width: categoryCollectionView.frame.size.width / 4, height: 60)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
