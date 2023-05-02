@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol HomeViewControllerDelegate {
+    func navigateToDetail()
+}
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeTableView: UITableView!
@@ -24,8 +28,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
         setupHomeTableView()
+    }
+    
+    @objc func showAllButtonTapped(_ sender: Any) {
+        let vc = AllProductsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -45,6 +53,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: FeaturedProductTableCell.identifier, for: indexPath) as? FeaturedProductTableCell else { return UITableViewCell() }
             cell.setupFeaturedProductTableCellUI()
+            cell.featuredProductDelegate = self
+            cell.showAllLabel.addTarget(self, action: #selector(showAllButtonTapped(_:)), for: .touchUpInside)
             return cell
         default:
             return UITableViewCell()
@@ -61,5 +71,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return UITableView.automaticDimension
+    }
+}
+
+extension HomeViewController: HomeViewControllerDelegate {
+    func navigateToDetail() {
+        showDetailProduct()
     }
 }

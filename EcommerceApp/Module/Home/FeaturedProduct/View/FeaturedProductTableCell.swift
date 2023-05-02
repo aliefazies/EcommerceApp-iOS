@@ -14,7 +14,11 @@ class FeaturedProductTableCell: UITableViewCell {
     var productData: Products?
     var productViewModel: FeaturedProductViewModelProtocol?
 
+    var featuredProductDelegate: HomeViewControllerDelegate?
+    
     @IBOutlet weak var featuredProductCollectionView: UICollectionView!
+    
+    @IBOutlet weak var showAllLabel: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +44,6 @@ class FeaturedProductTableCell: UITableViewCell {
         productViewModel = FeaturedProductViewModel(apiServiceProtocol: APIService())
         callAPI()
     }
-    
 }
 
 extension FeaturedProductTableCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -58,10 +61,14 @@ extension FeaturedProductTableCell: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 156, height: 260)
+        return CGSize(width: 156, height: 180)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        featuredProductDelegate?.navigateToDetail()
     }
 }
