@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
@@ -20,6 +21,12 @@ class ProfileViewController: UIViewController {
         userProfileTableView.register(UINib(nibName: "UserProfileTableCell", bundle: nil), forCellReuseIdentifier: UserProfileTableCell.identifier)
         userProfileTableView.register(UINib(nibName: "MenuButtonTableCell", bundle: nil), forCellReuseIdentifier: MenuButtonTableCell.identifier)
         userProfileTableView.register(UINib(nibName: "LogoutButtonTableCell", bundle: nil), forCellReuseIdentifier: LogoutButtonTableCell.identifier)
+            
+    }
+    
+    @objc func logoutButtonTapped(_ sender: Any) {
+        try! Auth.auth().signOut()
+        self.showLoginViewController()
     }
 }
 
@@ -54,11 +61,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = userProfileTableView.dequeueReusableCell(withIdentifier: LogoutButtonTableCell.identifier) as? LogoutButtonTableCell else { return UITableViewCell() }
             
             cell.setupLogoutButtonTableCellUI()
+            cell.logoutButton.addTarget(self, action: #selector(logoutButtonTapped(_:)), for: .touchUpInside)
             return cell
         default:
             return UITableViewCell()
-            
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,6 +76,18 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-    
-    
+}
+
+extension UIViewController {
+    func showProfileViewController() {
+        let vc = ProfileViewController()
+//        let scenes = UIApplication.shared.connectedScenes
+//        let windowScene = scenes.first as! UIWindowScene
+//        let window = windowScene.windows.first!
+//        let navigationController = UINavigationController(rootViewController: vc)
+        
+//        window.rootViewController = navigationController
+        self.navigationController?.pushViewController(vc, animated: true)
+        removeFromParent()
+        }
 }

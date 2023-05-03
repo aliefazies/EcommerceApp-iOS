@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class TabBar: UITabBarController {
     
@@ -24,8 +25,19 @@ class TabBar: UITabBarController {
         viewControllers = [
             createNavController(for: HomeViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "house")!),
             createNavController(for: WishlistViewController(), title: NSLocalizedString("Wishlist", comment: ""), image: UIImage(systemName: "basket")!),
-            createNavController(for: ProfileViewController(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!)
+//            createNavController(for: ProfileViewController(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!)
+            setupProfileVCs()
         ]
+    }
+    
+    func setupProfileVCs() -> UIViewController {
+        var vc = UIViewController()
+        if Auth.auth().currentUser != nil {
+            vc = createNavController(for: ProfileViewController(), title: "Profile", image: UIImage(systemName: "person")!)
+        } else {
+            vc = createNavController(for: RegisterViewController(), title: NSLocalizedString("Register", comment: ""), image: UIImage(systemName: "person")!)
+        }
+        return vc
     }
     
     fileprivate func createNavController(for rootViewController: UIViewController,

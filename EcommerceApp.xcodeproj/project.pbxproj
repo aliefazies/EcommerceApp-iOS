@@ -16,6 +16,7 @@
 		013F6B4C2A00B2E700A14FAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F6B4A2A00B2E700A14FAF /* LoginViewController.swift */; };
 		013F6B4D2A00B2E700A14FAF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013F6B4B2A00B2E700A14FAF /* LoginViewController.xib */; };
 		013F6B8C2A00D37F00A14FAF /* RegisterLoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F6B8B2A00D37F00A14FAF /* RegisterLoginTextField.swift */; };
+		015531A52A01F9DC00752511 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015531A42A01F9DC00752511 /* StringExtension.swift */; };
 		01627BB229E656E30082B6A5 /* Promo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01627BB129E656E30082B6A5 /* Promo.swift */; };
 		01627BB429E65A070082B6A5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01627BB329E65A070082B6A5 /* Category.swift */; };
 		01627BB629E65AD50082B6A5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01627BB529E65AD50082B6A5 /* Product.swift */; };
@@ -83,6 +84,7 @@
 		013F6B4A2A00B2E700A14FAF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		013F6B4B2A00B2E700A14FAF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		013F6B8B2A00D37F00A14FAF /* RegisterLoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterLoginTextField.swift; sourceTree = "<group>"; };
+		015531A42A01F9DC00752511 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		01627BB129E656E30082B6A5 /* Promo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promo.swift; sourceTree = "<group>"; };
 		01627BB329E65A070082B6A5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		01627BB529E65AD50082B6A5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				017F944129E50D30008545E2 /* DynamicHeightTableView.swift */,
 				0168D93429E3A60C00BDB81D /* UIColorExtension.swift */,
 				013F6B8B2A00D37F00A14FAF /* RegisterLoginTextField.swift */,
+				015531A42A01F9DC00752511 /* StringExtension.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				01E9339129E4EE9000DB8B70 /* ProductStoreTableCell.swift in Sources */,
 				52CF7C1C29DE810700A732E0 /* AppDelegate.swift in Sources */,
 				017E9FFD29E3F9C80094D972 /* DetailViewController.swift in Sources */,
+				015531A52A01F9DC00752511 /* StringExtension.swift in Sources */,
 				52D10B8E29DEA078002426F9 /* CategoryTableCell.swift in Sources */,
 				52CF7C4929DE845000A732E0 /* ProfileViewController.swift in Sources */,
 				01627BB629E65AD50082B6A5 /* Product.swift in Sources */,
