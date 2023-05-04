@@ -242,8 +242,8 @@
 			children = (
 				019278AE29FD4D4800E00345 /* DynamicHeightCollectionView.swift */,
 				017F944129E50D30008545E2 /* DynamicHeightTableView.swift */,
-				0168D93429E3A60C00BDB81D /* UIColorExtension.swift */,
 				013F6B8B2A00D37F00A14FAF /* RegisterLoginTextField.swift */,
+				0168D93429E3A60C00BDB81D /* UIColorExtension.swift */,
 				015531A42A01F9DC00752511 /* StringExtension.swift */,
 			);
 			path = Custom;
