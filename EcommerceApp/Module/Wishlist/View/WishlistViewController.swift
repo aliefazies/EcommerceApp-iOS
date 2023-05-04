@@ -40,15 +40,15 @@ extension WishlistViewController: UICollectionViewDelegateFlowLayout, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = wishlistCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionCell.identifier, for: indexPath) as? ProductCollectionCell else { return UICollectionViewCell() }
         cell.setupProductCollectionCellUI()
-        guard let wishlistDataItem = products?[indexPath.item] else { return UICollectionViewCell() }
+        guard let wishlistDataItem = products?.products[indexPath.item] else { return UICollectionViewCell() }
         let transformer = SDImageResizingTransformer(size: CGSize(width: 156, height: 260), scaleMode: .aspectFit)
-        cell.productImage.sd_setImage(with: URL(string: wishlistDataItem.imageURL ?? ""), placeholderImage: nil, context: [.imageTransformer: transformer])
+        cell.productImage.sd_setImage(with: URL(string: wishlistDataItem.images[0] ?? ""), placeholderImage: nil, context: [.imageTransformer: transformer])
         cell.productNameLabel.text = wishlistDataItem.title
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = products?.count ?? 0
+        let count = products?.products.count ?? 0
         return count
     }
 

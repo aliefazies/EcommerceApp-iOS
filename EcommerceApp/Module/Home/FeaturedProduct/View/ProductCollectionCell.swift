@@ -32,7 +32,7 @@ class ProductCollectionCell: UICollectionViewCell {
     func setupProductCollectionCellData(product: Product) {
         let transformer = SDImageResizingTransformer(size: CGSize(width: 130, height: 130), scaleMode: .aspectFit)
         productNameLabel.text = product.title
-        productImage.sd_setImage(with: URL(string: product.imageURL ?? ""), placeholderImage: nil, context: [.imageTransformer : transformer])
+        productImage.sd_setImage(with: URL(string: product.images[0] ?? ""), placeholderImage: nil, context: [.imageTransformer : transformer])
     }
 
 }

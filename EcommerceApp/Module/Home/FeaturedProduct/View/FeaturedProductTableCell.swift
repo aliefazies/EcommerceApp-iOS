@@ -49,7 +49,7 @@ class FeaturedProductTableCell: UITableViewCell {
 extension FeaturedProductTableCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = featuredProductCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionCell.identifier, for: indexPath) as? ProductCollectionCell else { return UICollectionViewCell() }
-        if let productDataItem = productData?.randomElement() {
+        if let productDataItem = productData?.products.randomElement() {
             cell.setupProductCollectionCellUI()
             cell.setupProductCollectionCellData(product: productDataItem)
         }

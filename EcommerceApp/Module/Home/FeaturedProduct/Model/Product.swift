@@ -7,18 +7,36 @@
 
 import Foundation
 
+// MARK: - Products
+struct Products: Codable {
+    let products: [Product]
+    let total, skip, limit: Int
+}
+
 // MARK: - Product
 struct Product: Codable {
     let id: Int
-    let title: String
+    let title, description: String
     let price: Int
-    let category, description: String
-    let imageURL: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id, title, price, category, description
-        case imageURL = "image_url"
-    }
+    let discountPercentage, rating: Double
+    let stock: Int
+    let brand, category: String
+    let thumbnail: String
+    let images: [String]
 }
 
-typealias Products = [Product]
+//// MARK: - Product
+//struct Product: Codable {
+//    let id: Int
+//    let title: String
+//    let price: Int
+//    let category, description: String
+//    let imageURL: String?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case id, title, price, category, description
+//        case imageURL = "image_url"
+//    }
+//}
+//
+//typealias Products = [Product]

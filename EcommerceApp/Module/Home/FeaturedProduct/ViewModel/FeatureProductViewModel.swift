@@ -12,7 +12,8 @@ protocol FeaturedProductViewModelProtocol {
 }
 
 class FeaturedProductViewModel: FeaturedProductViewModelProtocol {
-    private let url = "http://localhost:3003/wishlist"
+//    private let url = "http://localhost:3003/wishlist"
+    private let url = "https://dummyjson.com/products"
     private var apiServiceProtocol: ApiServiceProtocol
 
     var featuredProductDataBinding: ((Products?) -> ())?

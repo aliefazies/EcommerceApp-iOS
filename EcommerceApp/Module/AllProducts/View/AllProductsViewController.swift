@@ -38,16 +38,16 @@ class AllProductsViewController: UIViewController {
 
 extension AllProductsViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = products?.count ?? 0
+        let count = products?.products.count ?? 0
         return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = allProductsCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionCell.identifier, for: indexPath) as? ProductCollectionCell else { return UICollectionViewCell() }
         cell.setupProductCollectionCellUI()
-        guard let allProductsDataItem = products?[indexPath.item] else { return UICollectionViewCell() }
+        guard let allProductsDataItem = products?.products[indexPath.item] else { return UICollectionViewCell() }
         let transformer = SDImageResizingTransformer(size: CGSize(width: 156, height: 180), scaleMode: .aspectFit)
-        cell.productImage.sd_setImage(with: URL(string: allProductsDataItem.imageURL ?? ""), placeholderImage: nil, context: [.imageTransformer: transformer])
+        cell.productImage.sd_setImage(with: URL(string: allProductsDataItem.images[0] ?? ""), placeholderImage: nil, context: [.imageTransformer: transformer])
         print("LOG")
         print(allProductsDataItem.title)
         cell.productNameLabel.text = allProductsDataItem.title
