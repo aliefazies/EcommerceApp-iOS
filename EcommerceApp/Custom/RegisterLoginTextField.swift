@@ -57,11 +57,11 @@ import UIKit
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 2
-        textField.layer.borderColor = UIColor.systemOrange.cgColor
+        textField.layer.borderColor = UIColor(hexString: "#FFB341").cgColor
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 2
-        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderColor = UIColor(hexString: "#FFB341").cgColor
     }
 }

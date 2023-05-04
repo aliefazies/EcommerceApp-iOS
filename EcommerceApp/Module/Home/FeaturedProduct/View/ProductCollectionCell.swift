@@ -25,7 +25,7 @@ class ProductCollectionCell: UICollectionViewCell {
     
     func setupProductCollectionCellUI() {
         productNameLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        productNameLabel.textColor = UIColor(hex: "#0C1A30FF")
+        productNameLabel.textColor = UIColor(hexString: "#0C1A30")
         productNameLabel.numberOfLines = 2
     }
     
