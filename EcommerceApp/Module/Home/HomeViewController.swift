@@ -11,8 +11,15 @@ protocol HomeViewControllerDelegate {
     func navigateToDetail()
 }
 
+enum HomeItemGroup: Int {
+    case promo
+    case category
+    case featuredProduct
+}
+
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var homeTableView: UITableView!
     
     fileprivate func setupHomeTableView() {
@@ -20,37 +27,95 @@ class HomeViewController: UIViewController {
         homeTableView.dataSource = self
         homeTableView.separatorStyle = .none
         
-        homeTableView.register(UINib(nibName: "SearchBarCell", bundle: nil), forCellReuseIdentifier: SearchBarCell.identifier)
         homeTableView.register(UINib(nibName: "PromoTableCell", bundle: nil), forCellReuseIdentifier: PromoTableCell.identifier)
         homeTableView.register(UINib(nibName: "CategoryTableCell", bundle: nil), forCellReuseIdentifier: CategoryTableCell.identifier)
         homeTableView.register(UINib(nibName: "FeaturedProductTableCell", bundle: nil), forCellReuseIdentifier: FeaturedProductTableCell.identifier)
     }
     
+    fileprivate func setupLeftBarButtonItem() {
+        let imageView = UIImageView(image: UIImage(named: "cart"))
+        let label = UILabel()
+        label.text = "EcommerceApp"
+        let stackView = UIStackView(arrangedSubviews: [imageView, label])
+        stackView.axis = .horizontal
+        stackView.spacing = 4
+        imageView.contentMode = .scaleAspectFit
+        label.font = UIFont.systemFont(ofSize: 24, weight: .medium)
+        let customView = UIView()
+        customView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 32),
+            imageView.heightAnchor.constraint(equalToConstant: 32),
+            stackView.topAnchor.constraint(equalTo: customView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: customView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: customView.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: customView.bottomAnchor),
+            stackView.heightAnchor.constraint(equalToConstant: 36)
+        ])
+        let barButtonItem = UIBarButtonItem(customView: customView)
+        navigationItem.leftBarButtonItem = barButtonItem
+        
+        let deliveryImageView = UIImageView(image: UIImage(named: "delivery"))
+        let chatImageView = UIImageView(image: UIImage(named: "chat"))
+        
+        let rightBarStackView = UIStackView(arrangedSubviews: [deliveryImageView, chatImageView])
+        rightBarStackView.axis = .horizontal
+        rightBarStackView.spacing = 12
+        deliveryImageView.contentMode = .scaleAspectFit
+        chatImageView.contentMode = .scaleAspectFit
+        
+        let rightBarCustomView = UIView()
+        rightBarCustomView.addSubview(rightBarStackView)
+        rightBarStackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            rightBarStackView.topAnchor.constraint(equalTo: rightBarCustomView.topAnchor),
+            rightBarStackView.leadingAnchor.constraint(equalTo: rightBarCustomView.leadingAnchor),
+            rightBarStackView.trailingAnchor.constraint(equalTo: rightBarCustomView.trailingAnchor),
+            rightBarStackView.bottomAnchor.constraint(equalTo: rightBarCustomView.bottomAnchor),
+            chatImageView.widthAnchor.constraint(equalToConstant: 28),
+            chatImageView.heightAnchor.constraint(equalToConstant: 28),
+            deliveryImageView.widthAnchor.constraint(equalToConstant: 28),
+            deliveryImageView.heightAnchor.constraint(equalToConstant: 28)
+        ])
+        
+        let rightBarButtonItem = UIBarButtonItem(customView: rightBarCustomView)
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHomeTableView()
+        setupLeftBarButtonItem()
+        title = ""
+        
+        searchBarView.layer.borderColor = UIColor(hexString: "#FFB341").cgColor
+        searchBarView.layer.borderWidth = 1
+        searchBarView.layer.cornerRadius = 8
+        searchBarView.layer.masksToBounds = true
     }
     
     @objc func showAllButtonTapped(_ sender: Any) {
         let vc = AllProductsViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        switch indexPath.section {
-        case 0:
+        let tableSections = HomeItemGroup(rawValue: indexPath.section)
+        switch tableSections {
+        case .promo:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PromoTableCell.identifier, for: indexPath) as? PromoTableCell else { return UITableViewCell()}
             cell.setupPromoTableCellUI()
             return cell
-        case 1:
+        case .category:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: CategoryTableCell.identifier, for: indexPath) as? CategoryTableCell else { return UITableViewCell() }
             cell.setupCategoryTableCellUI()
             return cell
-        case 2:
+        case .featuredProduct:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: FeaturedProductTableCell.identifier, for: indexPath) as? FeaturedProductTableCell else { return UITableViewCell() }
             cell.setupFeaturedProductTableCellUI()
             cell.featuredProductDelegate = self
