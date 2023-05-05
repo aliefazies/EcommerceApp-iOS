@@ -25,8 +25,14 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func logoutButtonTapped(_ sender: Any) {
-        try! Auth.auth().signOut()
+        do {
+            try Auth.auth().signOut()
+        }
+        catch {
+            print("User hasn't logged out")
+        }
         self.showLoginViewController()
+        removeFromParent()
     }
 }
 

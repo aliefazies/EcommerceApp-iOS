@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0127A19B2A04900500613693 /* WalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0127A1992A04900500613693 /* WalletTableViewCell.swift */; };
+		0127A19C2A04900500613693 /* WalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0127A19A2A04900500613693 /* WalletTableViewCell.xib */; };
 		013F6B3C2A009B8500A14FAF /* AllProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F6B3A2A009B8500A14FAF /* AllProductsViewController.swift */; };
 		013F6B3D2A009B8500A14FAF /* AllProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013F6B3B2A009B8500A14FAF /* AllProductsViewController.xib */; };
 		013F6B412A009D2300A14FAF /* AllProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F6B402A009D2300A14FAF /* AllProductsViewModel.swift */; };
@@ -75,6 +77,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0127A1992A04900500613693 /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
+		0127A19A2A04900500613693 /* WalletTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTableViewCell.xib; sourceTree = "<group>"; };
 		013F6B3A2A009B8500A14FAF /* AllProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsViewController.swift; sourceTree = "<group>"; };
 		013F6B3B2A009B8500A14FAF /* AllProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllProductsViewController.xib; sourceTree = "<group>"; };
 		013F6B402A009D2300A14FAF /* AllProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductsViewModel.swift; sourceTree = "<group>"; };
@@ -158,6 +162,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0127A1982A048FF700613693 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				0127A1992A04900500613693 /* WalletTableViewCell.swift */,
+				0127A19A2A04900500613693 /* WalletTableViewCell.xib */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
 		013F6B392A009B5800A14FAF /* AllProducts */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +500,7 @@
 			children = (
 				52CF7C3D29DE842700A732E0 /* HomeViewController.swift */,
 				52CF7C3E29DE842700A732E0 /* HomeViewController.xib */,
+				0127A1982A048FF700613693 /* Wallet */,
 				52D10B8B29DEA052002426F9 /* Search */,
 				52D10B8A29DEA04A002426F9 /* Promo */,
 				52D10B9429DEA8AD002426F9 /* Category */,
@@ -610,6 +624,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0127A19C2A04900500613693 /* WalletTableViewCell.xib in Resources */,
 				52CF7C2829DE810800A732E0 /* LaunchScreen.storyboard in Resources */,
 				52CF7C5B29DE8C0A00A732E0 /* PromoCollectionCell.xib in Resources */,
 				013F6B3D2A009B8500A14FAF /* AllProductsViewController.xib in Resources */,
@@ -696,6 +711,7 @@
 				0168D93229E3A29A00BDB81D /* UserProfileTableCell.swift in Sources */,
 				013F6B3C2A009B8500A14FAF /* AllProductsViewController.swift in Sources */,
 				52CF7C4D29DE853D00A732E0 /* SearchBarCell.swift in Sources */,
+				0127A19B2A04900500613693 /* WalletTableViewCell.swift in Sources */,
 				52CF7C3F29DE842700A732E0 /* HomeViewController.swift in Sources */,
 				52CF7C4429DE843900A732E0 /* WishlistViewController.swift in Sources */,
 				01E9339629E4EFC400DB8B70 /* ProductDescriptionTableCell.swift in Sources */,
