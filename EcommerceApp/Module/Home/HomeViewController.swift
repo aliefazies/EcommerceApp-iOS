@@ -23,6 +23,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchBarView: UIView!
     @IBOutlet weak var homeTableView: UITableView!
     
+    weak var pageControl: UIPageControl?
+    weak var promosCollectionView: UICollectionView?
+    
     fileprivate func setupHomeTableView() {
         homeTableView.delegate = self
         homeTableView.dataSource = self
@@ -116,6 +119,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .promo:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PromoTableCell.identifier, for: indexPath) as? PromoTableCell else { return UITableViewCell()}
             cell.setupPromoTableCellUI()
+            cell.promoPageControl.currentPage = 0
+            
+            self.pageControl = cell.promoPageControl
+            cell.promoCollectionView.delegate = self
+//            cell.promoCollectionView.dataSource = self
+            self.promosCollectionView = cell.promoCollectionView
+            
             return cell
         case .category:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: CategoryTableCell.identifier, for: indexPath) as? CategoryTableCell else { return UITableViewCell() }
@@ -141,7 +151,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch HomeItemGroup(rawValue: indexPath.section) {
+        case .category:
+            return 150
+        default:
             return UITableView.automaticDimension
+        }
     }
     
 }
@@ -151,3 +166,18 @@ extension HomeViewController: HomeViewControllerDelegate {
         showDetailProduct()
     }
 }
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 160)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView == self.promosCollectionView {
+            let page = scrollView.contentOffset.x / scrollView.frame.width
+            pageControl?.currentPage = Int(page)
+        }
+    }
+    
+}
+

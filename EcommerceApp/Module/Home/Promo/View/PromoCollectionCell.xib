@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,29 +11,31 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PromoCollectionCell" customModule="EcommerceApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="315" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="315" height="175"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="315" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="315" height="175"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b8o-UV-RiZ">
-                        <rect key="frame" x="0.0" y="0.0" width="315" height="150"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b8o-UV-RiZ">
+                        <rect key="frame" x="16" y="4" width="283" height="167"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="b8o-UV-RiZ" secondAttribute="bottom" id="Dyw-b9-ewN"/>
-                <constraint firstAttribute="trailing" secondItem="b8o-UV-RiZ" secondAttribute="trailing" id="ce8-ux-gkw"/>
-                <constraint firstItem="b8o-UV-RiZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="od0-tA-5hH"/>
-                <constraint firstItem="b8o-UV-RiZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tOU-y2-eLC"/>
+                <constraint firstItem="b8o-UV-RiZ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="0kp-2d-aSs"/>
+                <constraint firstAttribute="trailing" secondItem="b8o-UV-RiZ" secondAttribute="trailing" constant="16" id="GpP-KK-pwV"/>
+                <constraint firstItem="b8o-UV-RiZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="M9E-yb-e1E"/>
+                <constraint firstAttribute="bottom" secondItem="b8o-UV-RiZ" secondAttribute="bottom" constant="4" id="TFO-TG-bef"/>
+                <constraint firstItem="b8o-UV-RiZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="ga3-0r-dq1"/>
+                <constraint firstItem="b8o-UV-RiZ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="uEM-ky-eWU"/>
             </constraints>
-            <size key="customSize" width="398" height="211"/>
+            <size key="customSize" width="398" height="236"/>
             <connections>
                 <outlet property="promoImage" destination="b8o-UV-RiZ" id="WVT-5r-G1Y"/>
             </connections>
-            <point key="canvasLocation" x="285.49618320610688" y="76.408450704225359"/>
+            <point key="canvasLocation" x="284.73282442748092" y="84.859154929577471"/>
         </collectionViewCell>
     </objects>
 </document>
