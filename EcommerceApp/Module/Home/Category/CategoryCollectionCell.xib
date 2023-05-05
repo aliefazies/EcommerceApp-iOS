@@ -11,22 +11,22 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCollectionCell" customModule="EcommerceApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="52" height="67"/>
+            <rect key="frame" x="0.0" y="0.0" width="52" height="82"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="52" height="67"/>
+                <rect key="frame" x="0.0" y="0.0" width="52" height="82"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_foods" translatesAutoresizingMaskIntoConstraints="NO" id="NJH-FG-5kS">
-                        <rect key="frame" x="14" y="8" width="24" height="24"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="NJH-FG-5kS">
+                        <rect key="frame" x="14" y="2" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="85q-FF-MKC"/>
                             <constraint firstAttribute="width" constant="24" id="DS3-vd-7FA"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D03-NO-3qC">
-                        <rect key="frame" x="0.0" y="40" width="52" height="19"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D03-NO-3qC">
+                        <rect key="frame" x="2" y="28" width="48" height="54"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -34,22 +34,22 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="D03-NO-3qC" secondAttribute="trailing" id="Exs-FP-C42"/>
-                <constraint firstAttribute="bottom" secondItem="D03-NO-3qC" secondAttribute="bottom" constant="8" id="Kjf-gR-rQC"/>
-                <constraint firstItem="D03-NO-3qC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ce7-qT-kdw"/>
+                <constraint firstAttribute="trailing" secondItem="D03-NO-3qC" secondAttribute="trailing" constant="2" id="Exs-FP-C42"/>
+                <constraint firstAttribute="bottom" secondItem="D03-NO-3qC" secondAttribute="bottom" id="Kjf-gR-rQC"/>
+                <constraint firstItem="D03-NO-3qC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="ce7-qT-kdw"/>
                 <constraint firstItem="NJH-FG-5kS" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="kis-3b-g2f"/>
-                <constraint firstItem="NJH-FG-5kS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="p6W-Ts-sve"/>
-                <constraint firstItem="D03-NO-3qC" firstAttribute="top" secondItem="NJH-FG-5kS" secondAttribute="bottom" constant="8" id="u0A-bR-7Wv"/>
+                <constraint firstItem="NJH-FG-5kS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="p6W-Ts-sve"/>
+                <constraint firstItem="D03-NO-3qC" firstAttribute="top" secondItem="NJH-FG-5kS" secondAttribute="bottom" constant="2" id="u0A-bR-7Wv"/>
             </constraints>
-            <size key="customSize" width="52" height="67"/>
+            <size key="customSize" width="52" height="82"/>
             <connections>
                 <outlet property="categoryImage" destination="NJH-FG-5kS" id="a61-qh-Xm5"/>
                 <outlet property="categoryLabel" destination="D03-NO-3qC" id="fw8-Gb-twJ"/>
             </connections>
-            <point key="canvasLocation" x="21.374045801526716" y="25.704225352112676"/>
+            <point key="canvasLocation" x="21.374045801526716" y="30.985915492957748"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="btn_foods" width="48" height="48"/>
+        <image name="cart" width="231.33332824707031" height="198"/>
     </resources>
 </document>
