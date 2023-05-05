@@ -12,6 +12,7 @@ protocol HomeViewControllerDelegate {
 }
 
 enum HomeItemGroup: Int {
+    case wallet
     case promo
     case category
     case featuredProduct
@@ -27,6 +28,7 @@ class HomeViewController: UIViewController {
         homeTableView.dataSource = self
         homeTableView.separatorStyle = .none
         
+        homeTableView.register(UINib(nibName: "WalletTableViewCell", bundle: nil), forCellReuseIdentifier: WalletTableViewCell.identifier)
         homeTableView.register(UINib(nibName: "PromoTableCell", bundle: nil), forCellReuseIdentifier: PromoTableCell.identifier)
         homeTableView.register(UINib(nibName: "CategoryTableCell", bundle: nil), forCellReuseIdentifier: CategoryTableCell.identifier)
         homeTableView.register(UINib(nibName: "FeaturedProductTableCell", bundle: nil), forCellReuseIdentifier: FeaturedProductTableCell.identifier)
@@ -107,6 +109,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableSections = HomeItemGroup(rawValue: indexPath.section)
         switch tableSections {
+        case .wallet:
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: WalletTableViewCell.identifier, for: indexPath) as? WalletTableViewCell else { return UITableViewCell()}
+            cell.selectionStyle = .none
+            return cell
         case .promo:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: PromoTableCell.identifier, for: indexPath) as? PromoTableCell else { return UITableViewCell()}
             cell.setupPromoTableCellUI()
@@ -131,12 +137,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return UITableView.automaticDimension
     }
+    
 }
 
 extension HomeViewController: HomeViewControllerDelegate {
