@@ -28,11 +28,10 @@ class FeaturedProductTableCell: UITableViewCell {
         productViewModel?.featuredProductDataBinding = { product in
             if let product = product {
                 self.productData = product
+                DispatchQueue.main.async {
+                    self.featuredProductCollectionView.reloadData()
+                }
             }
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.featuredProductCollectionView.reloadData()
         }
     }
     
@@ -49,9 +48,9 @@ class FeaturedProductTableCell: UITableViewCell {
 extension FeaturedProductTableCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = featuredProductCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionCell.identifier, for: indexPath) as? ProductCollectionCell else { return UICollectionViewCell() }
-        if let productDataItem = productData?.products.randomElement() {
+        if let productDataItem = productData?.products {
             cell.setupProductCollectionCellUI()
-            cell.setupProductCollectionCellData(product: productDataItem)
+            cell.setupProductCollectionCellData(product: productDataItem[indexPath.item])
         }
         return cell
     }
@@ -61,7 +60,7 @@ extension FeaturedProductTableCell: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 156, height: 180)
+        return CGSize(width: UIScreen.main.bounds.size.width / 2.3, height: 200)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -69,6 +68,7 @@ extension FeaturedProductTableCell: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        featuredProductDelegate?.navigateToDetail()
+        guard let selectedItem = productData?.products[indexPath.item].id else { return }
+        featuredProductDelegate?.navigateToDetail(id: selectedItem)
     }
 }

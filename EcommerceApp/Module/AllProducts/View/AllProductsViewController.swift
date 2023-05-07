@@ -46,20 +46,23 @@ extension AllProductsViewController: UICollectionViewDelegateFlowLayout, UIColle
         guard let cell = allProductsCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionCell.identifier, for: indexPath) as? ProductCollectionCell else { return UICollectionViewCell() }
         cell.setupProductCollectionCellUI()
         guard let allProductsDataItem = products?.products[indexPath.item] else { return UICollectionViewCell() }
-        let transformer = SDImageResizingTransformer(size: CGSize(width: 156, height: 180), scaleMode: .aspectFit)
-        cell.productImage.sd_setImage(with: URL(string: allProductsDataItem.images[0] ?? ""), placeholderImage: nil, context: [.imageTransformer: transformer])
-        print("LOG")
-        print(allProductsDataItem.title)
-        cell.productNameLabel.text = allProductsDataItem.title
+        let transformer = SDImageResizingTransformer(size: CGSize(width: 156, height: 260), scaleMode: .aspectFit)
+//        cell.productImage.sd_setImage(with: URL(string: allProductsDataItem.images[0] ?? ""), placeholderImage: nil, context: [.imageTransformer: transformer])
+//        print("LOG")
+//        print(allProductsDataItem.title)
+//        cell.productNameLabel.text = allProductsDataItem.title
+        cell.setupProductCollectionCellUI()
+        cell.setupProductCollectionCellData(product: allProductsDataItem)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 156, height: 260)
+        return CGSize(width: UIScreen.main.bounds.size.width / 2.3, height: 220)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        showDetailProduct()
+        guard let selectedItem = products?.products[indexPath.item].id else { return }
+        showDetailProduct(id: selectedItem)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

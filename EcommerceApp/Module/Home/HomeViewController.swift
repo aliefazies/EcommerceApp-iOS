@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeViewControllerDelegate {
-    func navigateToDetail()
+    func navigateToDetail(id: Int)
 }
 
 enum HomeItemGroup: Int {
@@ -162,8 +162,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeViewControllerDelegate {
-    func navigateToDetail() {
-        showDetailProduct()
+    func navigateToDetail(id: Int) {
+        showDetailProduct(id: id)
     }
 }
 
