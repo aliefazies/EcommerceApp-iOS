@@ -33,13 +33,13 @@ class PromoTableCell: UITableViewCell {
         promoViewModel?.promoDataBinding = { promos in
             if let promos = promos {
                 self.promosData = promos
+                DispatchQueue.main.async() { [weak self] in
+                    self?.promoCollectionView.reloadData()
+                    self?.promoPageControl.numberOfPages = self?.promosData?.count ?? 0
+                }
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { [weak self] in
-            self?.promoCollectionView.reloadData()
-            self?.promoPageControl.numberOfPages = self?.promosData?.count ?? 0
-        }
     }
     
     func setupPromoTableCellUI() {
