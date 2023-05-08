@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class UserProfileTableCell: UITableViewCell {
     
@@ -39,10 +40,16 @@ class UserProfileTableCell: UITableViewCell {
         userProfileImage.layer.masksToBounds = true
         userProfileImage.image = UIImage(named: "avatar")
         
-        userProfileNameLabel.text = "Alief Azies"
         userProfileNameLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         
-        userProfileEmailLabel.text = "alief.azies@gmail.com"
+        if let user = Auth.auth().currentUser {
+            let email = user.email
+            userProfileEmailLabel.text = email
+            let username = user.displayName
+            userProfileNameLabel.text = username
+        }else {
+            print("Can't get user email")
+        }
         userProfileEmailLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
     }
     

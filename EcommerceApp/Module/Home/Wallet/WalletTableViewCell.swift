@@ -9,17 +9,14 @@ import UIKit
 
 class WalletTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var walletPriceLabel: UILabel!
+    @IBOutlet weak var walletPointsLabel: UILabel!
+    @IBOutlet weak var walletVoucherLabel: UILabel!
+    
     static let identifier = "WalletTableViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

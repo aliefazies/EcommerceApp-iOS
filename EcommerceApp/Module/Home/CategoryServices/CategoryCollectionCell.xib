@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="52" height="82"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="NJH-FG-5kS">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NJH-FG-5kS">
                         <rect key="frame" x="14" y="2" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="85q-FF-MKC"/>
@@ -49,7 +49,4 @@
             <point key="canvasLocation" x="21.374045801526716" y="30.985915492957748"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="cart" width="231.33332824707031" height="198"/>
-    </resources>
 </document>

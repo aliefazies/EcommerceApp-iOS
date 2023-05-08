@@ -18,18 +18,17 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b8o-UV-RiZ">
-                        <rect key="frame" x="16" y="4" width="283" height="167"/>
+                        <rect key="frame" x="16" y="8" width="283" height="159"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="b8o-UV-RiZ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="0kp-2d-aSs"/>
-                <constraint firstAttribute="trailing" secondItem="b8o-UV-RiZ" secondAttribute="trailing" constant="16" id="GpP-KK-pwV"/>
-                <constraint firstItem="b8o-UV-RiZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="M9E-yb-e1E"/>
-                <constraint firstAttribute="bottom" secondItem="b8o-UV-RiZ" secondAttribute="bottom" constant="4" id="TFO-TG-bef"/>
-                <constraint firstItem="b8o-UV-RiZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="ga3-0r-dq1"/>
-                <constraint firstItem="b8o-UV-RiZ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="uEM-ky-eWU"/>
+                <constraint firstAttribute="bottom" secondItem="b8o-UV-RiZ" secondAttribute="bottom" constant="8" id="7QV-v2-MtN"/>
+                <constraint firstItem="b8o-UV-RiZ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="DOe-Wg-xeW"/>
+                <constraint firstAttribute="trailing" secondItem="b8o-UV-RiZ" secondAttribute="trailing" constant="16" id="JLd-y0-f8f"/>
+                <constraint firstItem="b8o-UV-RiZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="csT-mn-uvE"/>
+                <constraint firstItem="b8o-UV-RiZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="vRP-zx-PDk"/>
             </constraints>
             <size key="customSize" width="398" height="236"/>
             <connections>

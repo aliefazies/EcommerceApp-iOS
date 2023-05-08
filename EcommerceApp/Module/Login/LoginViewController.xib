@@ -100,6 +100,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="sb0-dB-gXj" firstAttribute="top" secondItem="wzV-xs-qMt" secondAttribute="bottom" constant="24" id="0dc-3w-erZ"/>
                 <constraint firstItem="arm-3R-u8b" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="2F1-DR-PIP"/>

@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailProductNameLabel: UILabel!
     @IBOutlet weak var detailProductImage: UIImageView!
     
+    @IBOutlet weak var stockProductLabel: UILabel!
     var detailProductViewModel: DetailProductViewModel?
     
     var id: Int?
@@ -25,6 +26,7 @@ class DetailViewController: UIViewController {
         detailProductNameLabel.font = UIFont.systemFont(ofSize: 16)
         detailProductRating.font = UIFont.systemFont(ofSize: 12, weight: .light)
         detailProductRating.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        stockProductLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
     }
     
     override func viewDidLoad() {
@@ -47,11 +49,11 @@ class DetailViewController: UIViewController {
                     self.detailProductPrice.text = "$ \(self.productData?.price ?? 0)"
                     
                     self.detailProductRating.text = "\(self.productData?.rating ?? 0)"
+                    
+                    self.stockProductLabel.text = "Stok: \(self.productData?.stock ?? 0)"
                 }
             }
-            print(self.productData)
         }
-        
     }
 }
 

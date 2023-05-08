@@ -11,66 +11,62 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="144" id="KGk-i7-Jjw" customClass="FeaturedProductTableCell" customModule="EcommerceApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="360" height="144"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="210" id="KGk-i7-Jjw" customClass="FeaturedProductTableCell" customModule="EcommerceApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="326" height="210"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="144"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="326" height="210"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="deu-KW-Uoe" customClass="DynamicHeightCollectionView" customModule="EcommerceApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="46" width="360" height="98"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Goc-Tz-zkJ">
+                        <rect key="frame" x="16" y="16" width="294" height="27"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icv-Kx-5Nj">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="21.666666666666668"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbK-K2-Dhf">
+                                <rect key="frame" x="244" y="0.0" width="50" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show All">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                    </stackView>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Vuj-WK-Wls">
+                        <rect key="frame" x="0.0" y="51" width="326" height="220"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lhz-g7-c57">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="220" id="MDI-ah-eRl"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pcc-IT-5ZI">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Goc-Tz-zkJ">
-                        <rect key="frame" x="16" y="8" width="328" height="30"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icv-Kx-5Nj">
-                                <rect key="frame" x="0.0" y="0.0" width="164" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DbK-K2-Dhf">
-                                <rect key="frame" x="269" y="0.0" width="59" height="30"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Show All">
-                                            <attributes>
-                                                <color key="NSColor" systemColor="labelColor"/>
-                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                <integer key="NSUnderline" value="1"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                            </button>
-                        </subviews>
-                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="deu-KW-Uoe" secondAttribute="trailing" id="15n-Ys-UfU"/>
                     <constraint firstAttribute="trailing" secondItem="Goc-Tz-zkJ" secondAttribute="trailing" constant="16" id="6yf-tj-oNi"/>
-                    <constraint firstAttribute="bottom" secondItem="deu-KW-Uoe" secondAttribute="bottom" id="7CR-gX-Opr"/>
-                    <constraint firstItem="deu-KW-Uoe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Tag-zN-5KO"/>
+                    <constraint firstItem="Vuj-WK-Wls" firstAttribute="top" secondItem="Goc-Tz-zkJ" secondAttribute="bottom" constant="8" id="F3r-hK-Zn9"/>
                     <constraint firstItem="Goc-Tz-zkJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="fa0-PQ-dA0"/>
-                    <constraint firstItem="deu-KW-Uoe" firstAttribute="top" secondItem="Goc-Tz-zkJ" secondAttribute="bottom" constant="8" id="jed-FF-xOz"/>
-                    <constraint firstItem="Goc-Tz-zkJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="yXt-Cs-RcT"/>
+                    <constraint firstAttribute="bottom" secondItem="Vuj-WK-Wls" secondAttribute="bottom" id="oWN-t6-Z9m"/>
+                    <constraint firstAttribute="trailing" secondItem="Vuj-WK-Wls" secondAttribute="trailing" id="waG-Tl-ews"/>
+                    <constraint firstItem="Goc-Tz-zkJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="yXt-Cs-RcT"/>
+                    <constraint firstItem="Vuj-WK-Wls" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ypx-fw-NTl"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="featuredProductCollectionView" destination="deu-KW-Uoe" id="dLK-FP-Nvj"/>
+                <outlet property="featuredProductCollectionView" destination="Vuj-WK-Wls" id="SKJ-T0-IUh"/>
                 <outlet property="showAllLabel" destination="DbK-K2-Dhf" id="4t9-xX-o1j"/>
             </connections>
-            <point key="canvasLocation" x="80.916030534351137" y="125.35211267605635"/>
+            <point key="canvasLocation" x="54.961832061068698" y="147.88732394366198"/>
         </tableViewCell>
     </objects>
     <resources>

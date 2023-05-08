@@ -18,5 +18,14 @@ class CategoryCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func setupCategoryServicesUI(data: String) {
+        categoryImage.image = UIImage(systemName: "cart.fill")
+        categoryImage.tintColor = .systemYellow
+        categoryLabel.text = data
+        categoryLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
+        categoryLabel.numberOfLines = 0
+        categoryLabel.textAlignment = .center
+    }
 
 }

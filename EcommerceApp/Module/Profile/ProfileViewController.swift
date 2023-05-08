@@ -12,6 +12,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var userProfileTableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userProfileTableView.delegate = self
@@ -93,7 +94,9 @@ extension UIViewController {
 //        let navigationController = UINavigationController(rootViewController: vc)
         
 //        window.rootViewController = navigationController
+        self.navigationController?.tabBarItem.title = NSLocalizedString("Profile", comment: "")
         self.navigationController?.pushViewController(vc, animated: true)
         removeFromParent()
+        tabBarItem.title = "profile"
         }
 }

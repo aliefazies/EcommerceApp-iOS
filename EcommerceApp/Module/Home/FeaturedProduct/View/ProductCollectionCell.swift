@@ -10,14 +10,14 @@ import SDWebImage
 
 class ProductCollectionCell: UICollectionViewCell {
     
-    static let identifier = "productCollectionCell"
-
     @IBOutlet weak var productCollectionCellBgView: UIView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productRatingLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
-    @IBOutlet weak var productReviewCountLabel: UILabel!
+    
+    static let identifier = "productCollectionCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -45,7 +45,7 @@ class ProductCollectionCell: UICollectionViewCell {
         productNameLabel.text = product.title
         productRatingLabel.text = "\(product.rating)"
         productPriceLabel.text = "$ \(product.price)"
-        productImage.sd_setImage(with: URL(string: product.images[0] ?? ""), placeholderImage: nil, context: [.imageTransformer : transformer])
+        productImage.sd_setImage(with: URL(string: product.images[0] ), placeholderImage: nil, context: [.imageTransformer : transformer])
     }
 
 }

@@ -18,11 +18,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="232"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4t9-vn-Sbo">
-                        <rect key="frame" x="0.0" y="33.666666666666657" width="320" height="150"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4t9-vn-Sbo">
+                        <rect key="frame" x="0.0" y="33.666666666666657" width="320" height="160"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="150" id="TdB-mO-DCd"/>
+                            <constraint firstAttribute="height" constant="160" id="KIo-3q-l08"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Fup-ND-TJh">
                             <size key="itemSize" width="128" height="128"/>
@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6i9-Po-bb0">
-                        <rect key="frame" x="138.66666666666666" y="199.66666666666666" width="42.666666666666657" height="24.333333333333343"/>
+                        <rect key="frame" x="138.66666666666666" y="201.66666666666666" width="42.666666666666657" height="22.333333333333343"/>
                         <color key="pageIndicatorTintColor" systemColor="placeholderTextColor"/>
                         <color key="currentPageIndicatorTintColor" systemColor="systemYellowColor"/>
                     </pageControl>
@@ -49,7 +49,7 @@
                     <constraint firstItem="6i9-Po-bb0" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="CyI-cP-BUq"/>
                     <constraint firstAttribute="bottom" secondItem="6i9-Po-bb0" secondAttribute="bottom" constant="8" id="Dq6-Eu-MvS"/>
                     <constraint firstItem="4t9-vn-Sbo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="M2r-94-iY6"/>
-                    <constraint firstItem="6i9-Po-bb0" firstAttribute="top" secondItem="4t9-vn-Sbo" secondAttribute="bottom" constant="16" id="cib-fU-JOE"/>
+                    <constraint firstItem="6i9-Po-bb0" firstAttribute="top" secondItem="4t9-vn-Sbo" secondAttribute="bottom" constant="8" id="cib-fU-JOE"/>
                     <constraint firstItem="cwd-8f-zGJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="q2l-xE-drG"/>
                     <constraint firstAttribute="trailing" secondItem="4t9-vn-Sbo" secondAttribute="trailing" id="uJ7-X5-sCv"/>
                 </constraints>

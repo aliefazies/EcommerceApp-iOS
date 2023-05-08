@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductCollectionCell" customModule="EcommerceApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="249" height="349"/>
+            <rect key="frame" x="0.0" y="0.0" width="249" height="338"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="249" height="349"/>
+                <rect key="frame" x="0.0" y="0.0" width="249" height="338"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxJ-nL-sF6">
-                        <rect key="frame" x="0.0" y="0.0" width="249" height="349"/>
+                        <rect key="frame" x="0.0" y="0.0" width="249" height="338"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nky-Yu-5DQ">
                                 <rect key="frame" x="0.0" y="0.0" width="249" height="130"/>
@@ -85,7 +85,7 @@
                 <constraint firstItem="rxJ-nL-sF6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pwo-vq-z1H"/>
                 <constraint firstItem="rxJ-nL-sF6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qhA-Gf-gta"/>
             </constraints>
-            <size key="customSize" width="306" height="382"/>
+            <size key="customSize" width="306" height="371"/>
             <connections>
                 <outlet property="productCollectionCellBgView" destination="rxJ-nL-sF6" id="7JI-jf-HJ7"/>
                 <outlet property="productImage" destination="nky-Yu-5DQ" id="qsF-MA-ufI"/>
@@ -93,7 +93,7 @@
                 <outlet property="productPriceLabel" destination="nyW-nV-Kgs" id="0n5-VT-qRL"/>
                 <outlet property="productRatingLabel" destination="OOo-B3-edf" id="Fjs-8p-ieQ"/>
             </connections>
-            <point key="canvasLocation" x="212.97709923664121" y="136.26760563380282"/>
+            <point key="canvasLocation" x="-8.3969465648854964" y="66.901408450704224"/>
         </collectionViewCell>
     </objects>
     <resources>

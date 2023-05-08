@@ -15,6 +15,7 @@
                 <outlet property="loginButton" destination="DOk-OG-ZYE" id="C8k-hs-Mf3"/>
                 <outlet property="passwordTextField" destination="k63-iK-cH9" id="kMX-N1-ZGc"/>
                 <outlet property="registerButton" destination="jhd-H6-Rfx" id="3iN-Ob-N5Y"/>
+                <outlet property="usernameTextField" destination="n3k-ez-1rN" id="6i9-PS-tBy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,8 +24,28 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s8j-dI-ScM" customClass="RegisterLoginTextField" customModule="EcommerceApp" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daG-Bl-VxX">
+                    <rect key="frame" x="24" y="83" width="345" height="43"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UC-X3-slt">
+                    <rect key="frame" x="24" y="150" width="345" height="20.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n3k-ez-1rN" customClass="RegisterLoginTextField" customModule="EcommerceApp" customModuleProvider="target">
                     <rect key="frame" x="24" y="194.33333333333334" width="345" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="8tR-yk-6ui"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s8j-dI-ScM" customClass="RegisterLoginTextField" customModule="EcommerceApp" customModuleProvider="target">
+                    <rect key="frame" x="24" y="310.66666666666669" width="345" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="RMH-he-Pl4"/>
                     </constraints>
@@ -32,7 +53,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhd-H6-Rfx">
-                    <rect key="frame" x="24" y="382.66666666666669" width="345" height="48"/>
+                    <rect key="frame" x="24" y="499" width="345" height="48"/>
                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="hJg-QS-vZS"/>
@@ -45,19 +66,19 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nT1-bl-jOK">
-                    <rect key="frame" x="24" y="150" width="345" height="20.333333333333343"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0v-5K-aAh">
                     <rect key="frame" x="24" y="266.33333333333331" width="345" height="20.333333333333314"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0v-5K-aAh">
+                    <rect key="frame" x="24" y="382.66666666666669" width="345" height="20.333333333333314"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k63-iK-cH9" customClass="RegisterLoginTextField" customModule="EcommerceApp" customModuleProvider="target">
-                    <rect key="frame" x="24" y="310.66666666666669" width="345" height="48"/>
+                    <rect key="frame" x="24" y="427" width="345" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="kyM-I2-ZTN"/>
                     </constraints>
@@ -65,7 +86,7 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                 </textField>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08S-zM-wmy">
-                    <rect key="frame" x="66.333333333333343" y="454.66666666666669" width="260.66666666666663" height="34.333333333333314"/>
+                    <rect key="frame" x="66.333333333333343" y="571" width="260.66666666666663" height="34.333333333333371"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCi-Zb-D8h">
                             <rect key="frame" x="0.0" y="0.0" width="195" height="34.333333333333336"/>
@@ -83,33 +104,33 @@
                         </button>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daG-Bl-VxX">
-                    <rect key="frame" x="24" y="83" width="345" height="43"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n3k-ez-1rN" secondAttribute="trailing" constant="24" id="0Rv-6g-xlX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k0v-5K-aAh" secondAttribute="trailing" constant="24" id="4uy-rF-j7F"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="daG-Bl-VxX" secondAttribute="trailing" constant="24" id="7RA-dC-pDh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nT1-bl-jOK" secondAttribute="trailing" constant="24" id="9Jo-9e-Hso"/>
                 <constraint firstItem="k0v-5K-aAh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="BaQ-YJ-ORZ"/>
+                <constraint firstItem="3UC-X3-slt" firstAttribute="top" secondItem="daG-Bl-VxX" secondAttribute="bottom" constant="24" id="Ctr-62-D0e"/>
                 <constraint firstItem="nT1-bl-jOK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="DiF-wn-EZQ"/>
                 <constraint firstItem="jhd-H6-Rfx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="EbA-AW-Hxs"/>
                 <constraint firstItem="k63-iK-cH9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="GBU-8g-Yw7"/>
                 <constraint firstItem="k63-iK-cH9" firstAttribute="top" secondItem="k0v-5K-aAh" secondAttribute="bottom" constant="24" id="OXz-O9-S2M"/>
+                <constraint firstItem="n3k-ez-1rN" firstAttribute="top" secondItem="3UC-X3-slt" secondAttribute="bottom" constant="24" id="P90-RV-b28"/>
+                <constraint firstItem="3UC-X3-slt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Q2H-Xp-1nU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s8j-dI-ScM" secondAttribute="trailing" constant="24" id="aL0-Ai-tX3"/>
                 <constraint firstItem="k0v-5K-aAh" firstAttribute="top" secondItem="s8j-dI-ScM" secondAttribute="bottom" constant="24" id="cqo-Yy-TeG"/>
                 <constraint firstItem="jhd-H6-Rfx" firstAttribute="top" secondItem="k63-iK-cH9" secondAttribute="bottom" constant="24" id="dRV-Bv-wAl"/>
+                <constraint firstItem="nT1-bl-jOK" firstAttribute="top" secondItem="n3k-ez-1rN" secondAttribute="bottom" constant="24" id="eho-oN-XIL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jhd-H6-Rfx" secondAttribute="trailing" constant="24" id="eiF-aN-hnc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3UC-X3-slt" secondAttribute="trailing" constant="24" id="fZ6-a5-hvO"/>
                 <constraint firstItem="08S-zM-wmy" firstAttribute="top" secondItem="jhd-H6-Rfx" secondAttribute="bottom" constant="24" id="gdd-Fh-2zm"/>
                 <constraint firstItem="daG-Bl-VxX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="gz4-aa-s6M"/>
+                <constraint firstItem="n3k-ez-1rN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="jXl-gK-bpm"/>
                 <constraint firstItem="08S-zM-wmy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lQS-HZ-iLF"/>
                 <constraint firstItem="daG-Bl-VxX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="nJL-TS-r1Q"/>
-                <constraint firstItem="nT1-bl-jOK" firstAttribute="top" secondItem="daG-Bl-VxX" secondAttribute="bottom" constant="24" id="pmi-2J-hDU"/>
                 <constraint firstItem="s8j-dI-ScM" firstAttribute="top" secondItem="nT1-bl-jOK" secondAttribute="bottom" constant="24" id="smY-WU-uWI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k63-iK-cH9" secondAttribute="trailing" constant="24" id="xrg-TL-FWl"/>
                 <constraint firstItem="s8j-dI-ScM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="zG7-MS-T0B"/>

@@ -19,8 +19,14 @@ class PromoCollectionCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configurePromoImage(promoData: Promo) {
-        let transformer = SDImageResizingTransformer(size: CGSize(width: 315, height: 150), scaleMode: .fill)
+    fileprivate func configurePromoImage(promoData: Promo) {
+        let transformer = SDImageResizingTransformer(size: CGSize(width: 315, height: 160), scaleMode: .fill)
         promoImage.sd_setImage(with: URL(string:promoData.fileURL), placeholderImage: nil, context: [.imageTransformer: transformer])
+    }
+    
+    func setupPromoCollectionCellUI(data: Promo) {
+        configurePromoImage(promoData: data)
+        promoImage.layer.cornerRadius = 8
+        promoImage.layer.masksToBounds = true
     }
 }

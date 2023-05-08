@@ -165,6 +165,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="walletPointsLabel" destination="9i4-8w-FBA" id="DYu-hV-Rfn"/>
+                <outlet property="walletPriceLabel" destination="daV-7b-jgB" id="bST-Pg-rrR"/>
+                <outlet property="walletVoucherLabel" destination="wR5-pO-NqM" id="Yg5-Y8-fEp"/>
+            </connections>
             <point key="canvasLocation" x="125.95419847328243" y="-42.95774647887324"/>
         </tableViewCell>
     </objects>

@@ -21,7 +21,6 @@ class DetailProductViewModel: DetailProductViewModelProtocol {
     private var url: String {
         guard let id = id else { return "" }
         let urlString = "https://dummyjson.com/products/\(id)"
-//        print(urlString)
         return urlString
     }
     
@@ -35,7 +34,6 @@ class DetailProductViewModel: DetailProductViewModelProtocol {
     
     func fetchDataDetailProduct() {
         self.apiServiceProtocol.callApi(with: self.url, model: Product.self) { response in
-//            print(response)
             switch response {
             case .success(let product):
                 self.detailProductDataBinding?(product)

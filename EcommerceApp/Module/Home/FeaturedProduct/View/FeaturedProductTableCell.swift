@@ -36,11 +36,13 @@ class FeaturedProductTableCell: UITableViewCell {
     }
     
     func setupFeaturedProductTableCellUI() {
+        selectionStyle = .none
         featuredProductCollectionView.delegate = self
         featuredProductCollectionView.dataSource = self
         featuredProductCollectionView.register(UINib(nibName: "ProductCollectionCell", bundle: nil), forCellWithReuseIdentifier: ProductCollectionCell.identifier)
         
         productViewModel = FeaturedProductViewModel(apiServiceProtocol: APIService())
+        
         callAPI()
     }
 }
@@ -48,19 +50,21 @@ class FeaturedProductTableCell: UITableViewCell {
 extension FeaturedProductTableCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = featuredProductCollectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionCell.identifier, for: indexPath) as? ProductCollectionCell else { return UICollectionViewCell() }
+        
         if let productDataItem = productData?.products {
             cell.setupProductCollectionCellUI()
             cell.setupProductCollectionCellData(product: productDataItem[indexPath.item])
         }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width / 2.3, height: 200)
+        return CGSize(width: 160, height: 220)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
