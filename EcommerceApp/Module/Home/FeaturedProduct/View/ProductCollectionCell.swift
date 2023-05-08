@@ -49,5 +49,4 @@ class ProductCollectionCell: UICollectionViewCell {
         productPriceLabel.text = "$ \(product.price)"
         productImage.sd_setImage(with: URL(string: product.images[0] ), placeholderImage: nil, context: [.imageTransformer : transformer])
     }
-
 }

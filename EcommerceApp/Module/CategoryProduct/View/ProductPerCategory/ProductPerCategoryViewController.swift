@@ -66,10 +66,10 @@ extension ProductPerCategoryViewController: UICollectionViewDelegateFlowLayout, 
     
 }
 
-//extension UIViewController {
-//    func showProductPerCategoryViewController(categories: [String]) {
-//        let vc = ProductPerCategoryViewController()
-//        vc.categories = categories
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
-//}
+extension UIViewController {
+    func showProductPerCategoryViewController(data: String) {
+        let vc = ProductPerCategoryViewController()
+        vc.categories = data
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}

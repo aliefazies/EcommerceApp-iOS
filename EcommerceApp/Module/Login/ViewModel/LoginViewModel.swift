@@ -14,8 +14,7 @@ class LoginViewModel {
     
     func loginUser(completion: @escaping (Result<User, Error>) -> Void) {
         
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (loginResult, error) in
-            guard let `self` = self else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { (loginResult, error) in
             if let error = error {
                 completion(.failure(error))
             } else if let user = loginResult?.user {
