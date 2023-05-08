@@ -12,7 +12,6 @@ protocol AllProductsViewModelProtocol {
 }
 
 class AllProductsViewModel: AllProductsViewModelProtocol {
-//    private let url = "http://localhost:3003/wishlist"
     private let url = "https://dummyjson.com/products"
     private var apiServiceProtocol: ApiServiceProtocol
     
