@@ -13,20 +13,6 @@ class LoginViewModel {
     var password: String = ""
     
     func loginUser(completion: @escaping (Result<User, Error>) -> Void) {
-        guard !email.isEmpty else {
-            completion(.failure(LoginError.emptyEmail))
-            return
-        }
-        
-        guard isValidEmail(email) else {
-            completion(.failure(LoginError.invalidEmail))
-            return
-        }
-        
-        guard password.count >= 8 else {
-            completion(.failure(LoginError.invalidPassword))
-            return
-        }
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (loginResult, error) in
             guard let `self` = self else { return }
@@ -43,11 +29,5 @@ class LoginViewModel {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
         return emailPredicate.evaluate(with: email)
-    }
-    
-    enum LoginError: Error {
-        case emptyEmail
-        case invalidEmail
-        case invalidPassword
     }
 }

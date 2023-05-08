@@ -15,6 +15,7 @@ class ProductCollectionCell: UICollectionViewCell {
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productRatingLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var starRatingImageView: UIImageView!
     
     static let identifier = "productCollectionCell"
     
@@ -25,7 +26,7 @@ class ProductCollectionCell: UICollectionViewCell {
     
     func setupProductCollectionCellUI() {
         productNameLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        productNameLabel.textColor = UIColor(hexString: "#0C1A30")
+        productNameLabel.textColor = UIColor.black
         productNameLabel.numberOfLines = 2
         productPriceLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         productRatingLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
@@ -42,6 +43,7 @@ class ProductCollectionCell: UICollectionViewCell {
     
     func setupProductCollectionCellData(product: Product) {
         let transformer = SDImageResizingTransformer(size: CGSize(width: 130, height: 130), scaleMode: .aspectFit)
+        starRatingImageView.image = UIImage(systemName: "star.fill")
         productNameLabel.text = product.title
         productRatingLabel.text = "\(product.rating)"
         productPriceLabel.text = "$ \(product.price)"

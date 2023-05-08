@@ -21,7 +21,6 @@ class ProductPerCategoryViewModel: ProductPerCategoryViewModelProtocol {
     private var url: String {
         guard let category = category else { return "" }
         let urlString = "https://dummyjson.com/products/category/\(category)"
-        print(urlString)
         return urlString
     }
     

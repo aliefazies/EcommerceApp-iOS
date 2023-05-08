@@ -88,23 +88,11 @@ class CategoryProductViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.categoryProductCollectionView.reloadData()
                     self.categoriesData = category
-                    print(self.categoriesData)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
-        
-//        fetchCategories { result in
-//            switch result {
-//            case .success(let categories):
-//                // Do something with the categories array
-//                print(categories)
-//            case .failure(let error):
-//                // Handle the error
-//                print(error.localizedDescription)
-//            }
-//        }
     }
 
 }

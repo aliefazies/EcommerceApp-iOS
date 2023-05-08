@@ -20,7 +20,7 @@ class TabBar: UITabBarController {
         return navController
     }
     
-    fileprivate func setupProfileVCs() -> UIViewController {
+    fileprivate func isUserAlreadyLogin() -> UIViewController {
         var vc = UIViewController()
         if Auth.auth().currentUser != nil {
             vc = createNavController(for: ProfileViewController(), title: "Profile", image: UIImage(systemName: "person")!)
@@ -34,7 +34,7 @@ class TabBar: UITabBarController {
         viewControllers = [
             createNavController(for: HomeViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "house")!),
             createNavController(for: CategoryProductViewController(), title: "Category", image: UIImage(systemName: "square.grid.2x2.fill")!),
-            setupProfileVCs()
+            isUserAlreadyLogin()
         ]
     }
     

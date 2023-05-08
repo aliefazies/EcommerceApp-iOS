@@ -42,8 +42,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SjN-3Y-aRp">
                                 <rect key="frame" x="8" y="146" width="233" height="20"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uSC-Bh-2vq">
-                                        <rect key="frame" x="0.0" y="-0.33333333333333215" width="20" height="19.666666666666664"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uSC-Bh-2vq">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="OuA-84-IyF"/>
@@ -92,12 +92,12 @@
                 <outlet property="productNameLabel" destination="AAF-ip-yxx" id="NK1-gh-rKm"/>
                 <outlet property="productPriceLabel" destination="nyW-nV-Kgs" id="0n5-VT-qRL"/>
                 <outlet property="productRatingLabel" destination="OOo-B3-edf" id="Fjs-8p-ieQ"/>
+                <outlet property="starRatingImageView" destination="uSC-Bh-2vq" id="dcw-HG-qBm"/>
             </connections>
             <point key="canvasLocation" x="-8.3969465648854964" y="66.901408450704224"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

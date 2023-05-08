@@ -26,13 +26,11 @@ class RegisterViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
         
-        
     @objc func dismissKeyboard() {
         if let nav = self.navigationController {
             nav.view.endEditing(true)
         }
     }
-    
     
     @IBAction func registerButtonTapped(_ sender: Any) {
         
@@ -54,10 +52,9 @@ class RegisterViewController: UIViewController {
         viewModel.registerUser { result in
             switch result {
             case .success:
-                print("register berhasil")
-                self.showAlert(title: "Success", message: "Register Berhasil")
+                self.showAlert(title: "Success", message: "Register Success. Please go to Login")
             case .failure(let error):
-                print(error.localizedDescription)
+                self.showAlert(title: "Error", message: error.localizedDescription)
             }
         }
     }
@@ -65,20 +62,19 @@ class RegisterViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         showLoginViewController()
-        removeFromParent()
     }
     
-    private func isValidEmail(_ email: String?) -> Bool {
-        guard let email = email else { return false }
-        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
-        return emailPredicate.evaluate(with: email)
-    }
-
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    func isValidEmail(_ email: String?) -> Bool {
+        guard let email = email else { return false }
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: email)
     }
 }
 

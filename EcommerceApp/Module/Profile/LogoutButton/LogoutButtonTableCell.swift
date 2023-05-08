@@ -24,6 +24,7 @@ class LogoutButtonTableCell: UITableViewCell {
     }
     
     func setupLogoutButtonTableCellUI() {
+        selectionStyle = .none
         logoutButton.layer.cornerRadius = 4
         logoutButton.layer.masksToBounds = true
         logoutButton.setTitle("Logout", for: .normal)

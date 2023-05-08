@@ -26,17 +26,18 @@ class MenuButtonTableCell: UITableViewCell {
     }
     
     func setupUserButtonTableCellUI() {
+        selectionStyle = .none
         titleLabel.text = "My Orders"
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        titleLabel.textColor = UIColor(hexString: "#242424")
+        titleLabel.textColor = UIColor.black
         
         subtitleLabel.text = "View your orders"
         subtitleLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
-        subtitleLabel.textColor = UIColor(hexString: "#808080")
+        subtitleLabel.textColor = UIColor.systemGray
         
         userButtonBgView.layer.cornerRadius = 8
         userButtonBgView.layer.masksToBounds = true
-        userButtonBgView.layer.borderColor = UIColor(hexString: "#DDDDDD").cgColor
+        userButtonBgView.layer.borderColor = UIColor.lightGray.cgColor
         userButtonBgView.layer.borderWidth = 0.1
         
     }

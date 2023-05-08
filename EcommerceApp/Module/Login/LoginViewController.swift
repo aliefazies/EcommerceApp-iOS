@@ -38,8 +38,18 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         
+        guard isValidEmail(emailTextField.text) else {
+            showAlert(title: "Error", message: "Please enter a valid email address")
+            return
+        }
+        
+        guard let password = passwordTextField.text, password.count >= 8 else {
+            showAlert(title: "Error", message: "Password must be at least 8 characters long.")
+            return
+        }
+        
         viewModel.email = emailTextField.text ?? ""
-        viewModel.password = passwordTextField.text ?? ""
+        viewModel.password = password
         
         viewModel.loginUser { result in
             switch result {
@@ -55,7 +65,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func registerButtonTapped(_ sender: Any) {
         showRegisterViewController()
-        removeFromParent()
     }
     
     private func showAlert(title: String, message: String) {
@@ -64,6 +73,12 @@ class LoginViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func isValidEmail(_ email: String?) -> Bool {
+        guard let email = email else { return false }
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: email)
+    }
 }
 
 extension UIViewController {

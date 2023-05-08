@@ -36,6 +36,7 @@ class UserProfileTableCell: UITableViewCell {
 //        layer.shadowOffset = CGSize(width: 2, height: 2)
 //        layer.shadowColor = UIColor.black.cgColor
         
+        selectionStyle = .none
         userProfileImage.layer.cornerRadius = 40
         userProfileImage.layer.masksToBounds = true
         userProfileImage.image = UIImage(named: "avatar")
